@@ -1,0 +1,31 @@
+seed: 42
+img_size: 224
+batch_size: 8
+epochs: 20
+lr: 0.0001
+conf_th: 0.25
+
+# Paths (edit these)
+csv_path: "data/labels.csv"
+dataset_dir: "data/images"
+yolo_model_path: "models/best.pt"
+
+# Label mapping (edit to match your folders)
+folder_map:
+  viral: "Pneumoina-Viral"
+  bacterial: "Pneumonia-Bacterial"
+  covid-19: "COVID-19"
+  normal: "Normal"
+
+# YOLO lobe class ids expected (order fixed for "CoT")
+# Example:
+# 0=RUL, 1=RML, 2=RLL, 3=LUL, 4=LLL
+num_lobes: 5
+
+# Model
+hidden_dim: 256
+use_rationale: true
+rationale_weight: 0.3
+
+# Outputs
+ckpt_path: "outputs/best_zone_cot_resnet18.pt"
